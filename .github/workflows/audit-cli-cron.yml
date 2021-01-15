@@ -28,7 +28,7 @@ jobs:
             npm start -- --pretty --token ${{secrets.AUDIT_LOG_TOKEN}} --org ${{secrets.ORG_NAME}} --file 'audit-log-output.json'
           else
             echo "RUNNING AUDIT LOG POLL FROM $LAST_CURSOR"
-            npm start -- --pretty --token ${{secrets.AUDIT_LOG_TOKEN}} --org ${{secrets.ORG_NAME}} -c $LAST_CURSOR
+            npm start -- --pretty --token ${{secrets.AUDIT_LOG_TOKEN}} --org ${{secrets.ORG_NAME}} -c $LAST_CURSOR --file 'audit-log-output.json'
           fi
       # Cat the output. Optionally send it somewhere else
       - run: cat audit-log-output.json
