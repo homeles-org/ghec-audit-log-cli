@@ -73,9 +73,6 @@ function validateInput (program, config) {
   }
   // Check that if we are in GitHub actions the file is expected to be within the workspace
   if (process.env.GITHUB_ACTIONS) {
-    console.log(process.env.GITHUB_ACTIONS)
-    console.log(process.env.GITHUB_WORKSPACE)
-    console.log(parsed.outputFile)
     const filePath = path.join(process.env.GITHUB_WORKSPACE, parsed.outputFile)
     const { dir } = path.parse(filePath)
 
