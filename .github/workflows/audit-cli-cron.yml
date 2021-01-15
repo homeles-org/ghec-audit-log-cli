@@ -20,6 +20,8 @@ jobs:
       # Run the script with the latest cursor if present in the repo
       - run: npm install
       - run: |
+          echo $LAST_CURSOR
+          echo "Last Cursor ^^"
           if [ -z "$LAST_CURSOR" ]; then
             echo "FIRST TIME RUNNING AUDIT LOG POLL"
             npm start -- --pretty --token ${{secrets.AUDIT_LOG_TOKEN}} --org ${{secrets.ORG_NAME}} --file 'audit-log-output.json'
