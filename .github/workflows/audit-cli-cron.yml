@@ -2,6 +2,7 @@ name: Poll Audit Log
 
 # Run it every 30 minutes
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"
 
