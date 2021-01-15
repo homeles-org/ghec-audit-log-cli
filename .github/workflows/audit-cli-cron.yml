@@ -20,8 +20,6 @@ jobs:
       # Run the script with the latest cursor if present in the repo
       - run: npm install
       - run: |
-          env
-          ls $GITHUB_WORKSPACE -la
           export LAST_CURSOR=$(cat .last-cursor-update)
           echo $LAST_CURSOR
           echo "Last Cursor ^^"
